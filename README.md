@@ -1,1 +1,0 @@
-# Mental-Image-Retrieving-ClothingWebsite
