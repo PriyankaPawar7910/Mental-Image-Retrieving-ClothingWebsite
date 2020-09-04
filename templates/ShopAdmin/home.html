@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mental Image Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/site.css" %}">
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+
+</head>
+<body>
+<div class="container-fluid">
+<h2>Product Master</h2>
+    <div class="row mt-md-5">
+            <div class="col-4">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="image" name="imgProduct" required="" class="form-control">
+                    {% for field in form.visible_fields %}
+                        <p class="form-control"> {{ field }}</p>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary form-control mt-md-2">Upload</button>
+                </form>
+            {% if status == 1 %}
+            <label class="text-success  mt-md-2">"Records Added Successfully"</label>
+            {% elif status == 0 %}
+            <label class="text-danger  mt-md-2">"Transaction Failed"</label>
+            {% endif %}
+            </div>
+    </div>
+</div>
+</body>
+</html>

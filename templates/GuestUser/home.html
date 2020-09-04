@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>India Shopping Portal</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="/static/public/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/static/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/public/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/public/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/public/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/public/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/public/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/static/public/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/static/public/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="/static/public/css/aos.css">
+    <link rel="stylesheet" href="/static/public/css/style.css">
+</head>
+{% extends "GuestUser/base.html" %}
+{% block content %}
+<div class="site-section" id="abstract-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-12 text-center">
+                <h3 class="section-sub-title"></h3>
+                <h2 class="section-title mb-3">Abstract</h2>
+                <p>
+                    Image-based clothing retrieval is receiving increasing
+interest with the growth of online shopping. In practice,
+users may often have a desired piece of clothing in mind (e.g.,
+either having seen it before on the street or requiring certain
+specific clothing attributes) but may be unable to supply an
+image as a query. We model this problem as a new type of
+image retrieval task in which the target image resides only
+in the user’s mind (called “mental image retrieval” hereafter).
+Because of the absence of an explicit query image, we propose
+to solve this problem through relevance feedback. Specifically, a
+new Bayesian formulation is proposed that simultaneously models
+the retrieval target and its high-level representation in the mind
+of the user (called the “user metric” hereafter) as posterior
+distributions of pre-fetched shop images and heterogeneous
+features extracted from multiple clothing attributes, respectively.
+Requiring only clicks as user feedback, the proposed algorithm
+is able to account for the variability in human decision-making.
+Experiments with real users demonstrate the effectiveness of the
+proposed algorithm.
+                </p>
+            </div>
+        </div>
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-12 text-center">
+                <img src="/static/public/images/img_abstract.JPG">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-blocks-cover inner-page-cover overlay get-notification" id="search-section" style="background-image: url(/static/public/images/hero_2.jpg); background-attachment: fixed;" data-aos="fade">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <form class="col-md-7" method="post" action="#">
+                {% csrf_token %}
+                <h2>Shop with Us.</h2>
+                <div class="d-flex mb-4">
+                    <input type="text" class="form-control rounded-0" placeholder="Enter Gender Category Color" name="txtSearch" required="">
+                    <input type="submit" class="btn btn-white btn-outline-white rounded-0" value="Search">
+                </div>
+                <p>To simulate the search scenario, for each search session, the user should provide generic attributes as inputs for filtering, and a target image will then shown on the screen to represent the image residing in the user’s mind.</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-light" id="conclusion-section">
+    <div class="container">
+        <div class="row align-items-lg-center">
+            <div class="col-md-4 mb-5 mb-lg-0 position-relative">
+                <img src="/static/public/images/about_1.jpg" class="img-fluid" alt="Image">
+                <div class="experience">
+                    <span class="year">YEAR</span>
+                    <span class="caption">2019-20</span>
+                </div>
+            </div>
+            <div class="col-md-8 ml-auto">
+                <h3 class="section-sub-title"></h3>
+                <h2 class="section-title mb-3">Conclusion and Future Work</h2>
+                <p class="mb-4">
+                    In this paper, we investigate a new form of clothing retrieval
+problem in which an image of the target item resides only in
+the user’s mind. Because of the absence of an explicit image to
+use as a query, we propose a new Bayesian framework based
+on implicit relevance feedback for query-free image retrieval.
+Our algorithm consecutively updates the posterior probability
+distribution of the target and the weights of multiple features
+according to user feedback. Based on heterogeneous features
+extracted from clothing attributes using deep CNNs, a significant
+advantage of our search-dependent re-weighting scheme
+is that it models the variability of human decision-making
+through implicit feedback. Experimental results show that
+the proposed algorithm consistently outperforms previously
+developed algorithms based on a pre-defined image similarity
+metric. As an active attempt to model the subjective nature
+of user’s retrieval needs with limited user interaction, our
+algorithm also has possible applications in image retrieval
+and management tasks performed on personal cellphones
+or community-based media sharing websites. One possible
+argument in our experiment is that the user might be biased
+by what he has seen instead of what he has in mind when
+playing our mental game. It is interesting to see if theres a
+more unbiased setting for the mental image game. We will
+leave it as a future work.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</html>
